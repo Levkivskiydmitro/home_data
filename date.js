@@ -16,7 +16,13 @@ function getDate() {
     console.log(moment().format('YYYY/MM/DD HH:mm:ss'));
 }
 
+function getCurrentWeekday() {
+     console.log(moment().format('dddd'));
+}
+
+
 getCurrentDay();
 getCurrentMonth();
 getCurrentYear();
 getDate();
+getCurrentWeekday();
