@@ -26,3 +26,25 @@ getCurrentMonth();
 getCurrentYear();
 getDate();
 getCurrentWeekday();
+
+
+const express = require('express');
+const moment = require('moment');
+
+const app = express();
+const PORT = 3000;
+
+
+function getDate() {
+  return moment().format('YYYY/MM/DD HH:mm:ss');
+}
+
+
+app.get('/time', (req, res) => {
+  res.json({ time: getDate() });
+});
+
+
+app.listen(PORT, HOST, () => {
+    console.log(`Server started on http://${HOST}:${PORT}`)
+})
