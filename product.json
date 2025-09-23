@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Первый товар",
+    "description": "Описание первого поста",
+    "image": "https://i.work.ua/cdn-cgi/image/f=jpeg/article/579b.jpg?v=1713862862",
+    "likes": 10
+  },
+  {
+    "id": 2,
+    "title": "Второй товар",
+    "description": "Описание второго поста",
+    "image": "https://cdn.media.amplience.net/i/canon/canon-get-inspired-10-tips-travel-photography-1-1920x1080-tint?qlt=80&w=1920&sm=aspect&aspect=16:9&scaleFit=poi&poi=0.6159138107299804,0.5084063042534722,0.125,0.2222222222222222&fmt=jpg&fmt.options=interlaced&bg=rgb(255,255,255)",
+    "likes": 25
+  }
+]
