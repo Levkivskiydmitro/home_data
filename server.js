@@ -1,25 +1,55 @@
-const path = require("path")
-const fs = require("fs")
-const express = require('express')
+const express = require('express');
+const moment = require('moment'); 
+const fs = require('fs');
+const path = require('path');
 
-const app = express()
-
-
-const productsPath = path.join(__dirname, "products.json")
-
-const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"))
-
-
-
-const PORT = 8000
+const app = express();
+const PORT = 8000;
 const HOST = 'localhost'
 
-app.get("/", (req, res) =>{
-    res.status(200).json("hello")
-})
-app.get("/products",(req,res)=>{
-    res.status(200).json(products)
-})
-app.listen(PORT, HOST, () => {
-    console.log(`Server started on http://${HOST}:${PORT}`)
-})
+
+const arrayPath = path.join(__dirname, "product.json")
+const posts = JSON.parse(fs.readFileSync(arrayPath, "utf-8"))
+
+
+function Timestamp() {
+    return moment().format('YYYY-MM-DD HH:mm:ss'); 
+}
+
+
+app.get('/timestamp', (req, res) => {
+    res.json({ timestamp: Timestamp() });
+});
+
+
+
+app.get('/posts', (req, res) => {
+    res.status(200).json(array);
+});
+
+
+
+
+app.get("/posts/:id", (req, res) => {
+    const id = +req.params.id;
+    console.log(id);
+
+    if (isNaN(id)) {
+        res.status(400).json("need number");
+        return;
+    }
+
+    const post = posts.find((pr) => pr.id === id);
+
+    if (!post) {
+        res.status(404).json("not found");
+        return;
+    }
+
+    res.json(post);
+});
+
+
+app.listen(PORT, HOST , () => {
+    console.log(`http://${HOST}:${PORT}`);
+});

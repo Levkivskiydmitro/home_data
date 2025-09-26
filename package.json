@@ -6,13 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "server.js"
-    
-    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.30.1"
-  }
+    "express": "^5.1.0",
+    "fs": "^0.0.1-security",
+    "moment": "^2.30.1",
+    "path": "^0.12.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Levkivskiydmitro/home_data.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NikitaEmrih/home/issues"
+  },
+  "homepage": "https://github.com/NikitaEmrih/home#readme"
 }
