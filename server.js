@@ -8,7 +8,7 @@ const PORT = 8000;
 const HOST = 'localhost'
 
 
-const arrayPath = path.join(__dirname, "product.json")
+const arrayPath = path.join(__dirname, "array.json")
 const posts = JSON.parse(fs.readFileSync(arrayPath, "utf-8"))
 
 
@@ -24,9 +24,29 @@ app.get('/timestamp', (req, res) => {
 
 
 app.get('/posts', (req, res) => {
-    res.status(200).json(array);
-});
+    let { skip, take } = req.query;
+    if (skip !== undefined) {
+        skip = Number(skip);
+        if (isNaN(skip) || skip < 0) {
+            return res.status(400).json({ error: "skip должен быть числом >= 0" });
+        }
+    } else {
+        skip = 0;
+    }
+    if (take !== undefined) {
+        take = Number(take);
+        if (isNaN(take) || take < 0) {
+            return res.status(400).json({ error: "take должен быть числом >= 0" });
+        }
+    }
+    let result = posts.slice(skip);
 
+    if (take !== undefined) {
+        result = result.slice(0, take);
+    }
+
+    res.status(200).json(result);
+});
 
 
 
