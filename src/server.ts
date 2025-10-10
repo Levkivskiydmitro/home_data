@@ -1,8 +1,6 @@
-const express = require('express');
-const moment = require('moment');
-const path = require('path');
-
-const postRouter = require('./posts/post.router');
+import express from 'express';
+import moment from 'moment';
+import postRouter from './post.router';
 
 const app = express();
 const PORT = 8000;
@@ -14,9 +12,10 @@ app.get('/timestamp', (req, res) => {
   res.json({ timestamp: moment().format('YYYY-MM-DD HH:mm:ss') });
 });
 
-
 app.use('/posts', postRouter);
 
 app.listen(PORT, HOST, () => {
-  console.log(`Server is running at http://${HOST}:${PORT}`);
+  console.log(`Server running at http://${HOST}:${PORT}`);
 });
+
+;
