@@ -16,15 +16,20 @@ export type ProductCreate = Omit<Post, "id">
 export type ProductUpdate = Partial<Omit<Post, "id">>
 
 export interface IPostService {
-    getAll(): Promise<Post[]>;
-    getById(id: number): Promise<Post | null>;
-    create(data: CreatePostData): Promise<Post>;
-    update(id: number, data: UpdatePostData): Promise<Post | null>;
-
+  getAll(): Promise<Post[]>;
+  getById(id: number): Promise<Post | null>;
+  create(data: CreatePostData): Promise<Post>;
+  update(id: number, data: UpdatePostData): Promise<Post | null>;
+  delete(id: number): Promise<Post | null>; 
 }
 
-export interface PostControllerContract { 
-    getAll: (req: Request<object, Post[] | string, object, { take?: string }>, res: Response<Post[] | string>) => void;
-    getById: (req: Request<{ id: string }, Post | string, object>, res: Response<Post | string>) => void; 
-    create: (req: Request<object, Post | string, CreatePostData, object>, res: Response<Post | string>) => Promise<void>; 
-    update: (req: Request<{ id: number }, Post | string, UpdatePostData, object>, res: Response<Post | string>) => Promise<void>; }
+export interface PostControllerContract {
+  getAll: (req: Request<object, Post[] | string, object, { take?: string }>, res: Response<Post[] | string>) => void;
+  getById: (req: Request<{ id: string }, Post | string, object>, res: Response<Post | string>) => void;
+  create: (req: Request<object, Post | string, CreatePostData, object>, res: Response<Post | string>) => Promise<void>;
+  update: (req: Request<{ id: number }, Post | string, UpdatePostData, object>, res: Response<Post | string>) => Promise<void>;
+  delete: (req: Request<{ id: string }, Post | string, object>, res: Response<Post | string>) => Promise<void>;
+}
+
+
+    
