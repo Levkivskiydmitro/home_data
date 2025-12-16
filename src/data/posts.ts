@@ -1,4 +1,4 @@
-import { Post } from "../types/post";
+import { Post } from "../shared/types/post";
 
 export const posts: Post[] = [
   {

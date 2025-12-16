@@ -1,4 +1,4 @@
-import { Tag } from "../types/tag";
+import { Tag } from "../shared/types/tag";
 
 export const tags: Tag[] = [
   { id: 1, name: "JS" },

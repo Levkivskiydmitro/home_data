@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./PostList.module.css";
-
-
 import { posts } from "../../data/posts";
 import { tags } from "../../data/tags";
 import PostCard from "../PostCard/PostCard";

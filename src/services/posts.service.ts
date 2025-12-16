@@ -1,6 +1,6 @@
 
 import { PrismaClient } from '@prisma/client';
-import {CreatePostChecked,UpdatePostChecked,} from '../types/post.types';
+import {CreatePostChecked,UpdatePostChecked,} from '../shared/types/post.types';
 
 const prisma = new PrismaClient();
 
