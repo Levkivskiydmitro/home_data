@@ -1,0 +1,4 @@
+.wrapper { padding:14px 16px; border:1px solid #ffd2d2; background:#fff5f5; border-radius:12px; }
+.title { font-weight:600; margin-bottom:8px; }
+.message { font-size:14px; opacity:.9; }
+.btn { margin-top:10px; padding:8px 12px; border-radius:10px; border:1px solid #ffb3b3; background:white; cursor:pointer; }
